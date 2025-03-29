@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Factura Electrónica - SAT</title>
+  <link rel="stylesheet" href="./css/panel.css">
+</head>
+
+<body>
+  <header>
+    <img src="./img/gob.png" alt="Logo SAT">
+    <h1>SAT - Facturación Electrónica</h1>
+  </header>
+
+  <div class="container">
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="Nombre" id="lbl_Nombre"></label>
+          </div>
+
+      <div class="form-group">
+        <label for="fecha-emision">Hora y fecha de la emisión:</label>
+        <input type="datetime-local" id="fecha-emision" name="fecha-emision" required>
+      </div>
+
+      <div class="form-group">
+        <label for="vendedor">Vendedor:</label>
+        <input type="text" id="vendedor" name="vendedor" placeholder="Nombre del vendedor" required>
+      </div>
+
+      <div class="form-group">
+        <label for="concepto">Concepto:</label>
+        <input type="text" id="concepto" name="concepto" placeholder="Concepto de la factura" required>
+      </div>
+
+      <div class="form-group">
+        <label for="formato">Formato de la factura:</label>
+        <select id="formato" name="formato" required>
+          <option value="pdf">PDF</option>
+          <option value="xml">XML</option>
+          <option value="txt">TXT</option>
+        </select>
+      </div>
+
+      <div class="form-inline">
+        <div class="form-group">
+          <label for="subtotal">Subtotal:</label>
+          <input type="text" id="subtotal" name="subtotal" placeholder="0.00" required>
+        </div>
+        <div class="form-group">
+          <label for="impuesto">Impuesto:</label>
+          <input type="text" id="impuesto" name="impuesto" placeholder="0.00" required >
+        </div>
+        <div class="form-group">
+          <label for="total">Total:</label>
+          <input type="text" id="total" name="total" placeholder="0.00" required disabled>
+        </div>
+      </div>
+
+      <button type="button" id="btn_calcular">Calcular</button>
+
+      <button type="button" id="btn_facturar">Generar Factura</button>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js"></script>
+      <script src="./js/Classes/InterfazGeneradorArchivo.js"></script>
+      <script src="./js/Classes/GeneradorXML.js"></script>
+      <script src="./js/Classes/GeneradorTxt.js"></script>
+      <script src="./js/Classes/GeneradorPDF.js"></script>
+      <script src="./js/Classes/FacturaElectronica.js"></script>
+      <script src="./js/Classes/FacturaPersonaFisica.js"></script>
+      <script src="./js/Classes/FacturaPersonaMoral.js"></script>
+      <script src="./panel.js"></script>
+      
+    </form>
+  </div>
+</body>
+</html>

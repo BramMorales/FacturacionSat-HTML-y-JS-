@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingresar - SAT</title>
+  
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <header>
+    <img src="./img/gob.png" alt="Logo Gobierno de México">
+    <h1>Trámites y servicios para personas físicas</h1>
+  </header>
+
+  <main>
+    <h2>Acceso por contraseña</h2>
+    <form action="#" method="POST">
+      <label for="rfc">RFC:</label>
+      <input type="text" id="txt_rfc" name="rfc" placeholder="RFC" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="txt_password" name="password" placeholder="Contraseña" required>
+
+      <div class="captcha-container">
+        <img src="./img/captcha.jpg" alt="Captcha">
+        <input type="text" id="captcha" name="captcha" placeholder="Escriba la palabra del captcha" required>
+      </div>
+
+      <button type="button" id="btn_Enviar" onclick="Enviar()">Enviar</button>  
+
+      <script src="./js/Classes/InterfazGeneradorArchivo.js"></script>
+      <script src="./js/Classes/GeneradorXML.js"></script>
+      <script src="./js/Classes/GeneradorTxt.js"></script>
+      <script src="./js/Classes/GeneradorPDF.js"></script>
+      <script src="./js/Classes/FacturaElectronica.js"></script>
+      <script src="./js/Classes/FacturaPersonaFisica.js"></script>
+      <script src="./js/Classes/FacturaPersonaMoral.js"></script>
+      <script src="index.js"></script>
+    </form>
+  </main>
+</body>
+</html>
