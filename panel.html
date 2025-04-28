@@ -7,9 +7,10 @@
 </head>
 
 <body>
-  <header>
-    <img src="./img/gob.png" alt="Logo SAT">
-    <h1>SAT - Facturación Electrónica</h1>
+  <header class="top-nav">
+    <img src="./img/gob.png" alt="Logo SAT" class="nav-logo">
+    <h1 class="nav-title">SAT - Facturación Electrónica</h1>
+    <button class="nav-btn-right" id="btn_salir">Salir</button>
   </header>
 
   <div class="container">
@@ -42,6 +43,20 @@
         </select>
       </div>
 
+      <div class="form-group">
+        <label for="incluir-firma">
+          <input type="checkbox" id="incluir-firma" name="incluir-firma">
+          Incluir firma digital
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="incluir-qr">
+          <input type="checkbox" id="incluir-qr" name="incluir-qr">
+          Incluir código QR
+        </label>
+      </div>
+
       <div class="form-inline">
         <div class="form-group">
           <label for="subtotal">Subtotal:</label>
@@ -49,7 +64,7 @@
         </div>
         <div class="form-group">
           <label for="impuesto">Impuesto:</label>
-          <input type="text" id="impuesto" name="impuesto" placeholder="0.00" required >
+          <input type="text" id="impuesto" name="impuesto" placeholder="0.00" required disabled>
         </div>
         <div class="form-group">
           <label for="total">Total:</label>
@@ -58,18 +73,23 @@
       </div>
 
       <button type="button" id="btn_calcular">Calcular</button>
-
       <button type="button" id="btn_facturar">Generar Factura</button>
+      <button type="button" id="btn_nuevo">Nueva Factura</button>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js"></script>
-      <script src="./js/Classes/InterfazGeneradorArchivo.js"></script>
-      <script src="./js/Classes/GeneradorXML.js"></script>
-      <script src="./js/Classes/GeneradorTxt.js"></script>
-      <script src="./js/Classes/GeneradorPDF.js"></script>
-      <script src="./js/Classes/FacturaElectronica.js"></script>
-      <script src="./js/Classes/FacturaPersonaFisica.js"></script>
-      <script src="./js/Classes/FacturaPersonaMoral.js"></script>
-      <script src="./panel.js"></script>
+      <script src="./js/Classes/Bridge/InterfazGeneradorArchivo.js"></script>
+      <script src="./js/Classes/Bridge/GeneradorXML.js"></script>
+      <script src="./js/Classes/Bridge/GeneradorTxt.js"></script>
+      <script src="./js/Classes/Bridge/GeneradorPDF.js"></script>
+      <script src="./js/Classes/Bridge/FacturaElectronica.js"></script>
+      <script src="./js/Classes/Bridge/FacturaPersonaFisica.js"></script>
+      <script src="./js/Classes/Bridge/FacturaPersonaMoral.js"></script>
+      <script src="./js/Classes/Decorador/DecoradorFactura.js"></script>
+      <script src="./js/Classes/Decorador/FacturaConFirmaDigital.js"></script>
+      <script src="./js/Classes/Decorador/FacturaConQR.js"></script>
+      <script src="./js/Classes/Fachada/SistemaFacturacion.js"></script>
+      <script src="./js/panel.js"></script>
       
     </form>
   </div>
